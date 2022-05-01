@@ -334,7 +334,8 @@ const addBooks = async () => {
 
 // Auth Functions
 
-const signup = async () => {
+const signup = async (e) => {
+  e.preventDefault();
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
