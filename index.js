@@ -1,6 +1,9 @@
-import axiosWithAuth from "./axiosWithAuth.js";
-
 let page = 0;
+
+const axiosWithAuth = (access_token) => {
+  axios.defaults.headers.common["Authorization"] = `Bearer ${access_token}`;
+  return axios;
+};
 
 const getAllBooks = async () => {
   const res = await axios.get("http://localhost/lms/api/getAllBooks.php");
@@ -38,7 +41,7 @@ const appendData = (res) => {
   data.body.slice(0, 7).forEach((book, index) => {
     allBooksRow += `<tr>
               <th scope="row">${index + 1}</th>
-              <td id=${book.bookUrl} onclick=openUrl(this)>${book.title}</td>
+              <td id=${book.bookUrl} onclick="openUrl(this)">${book.title}</td>
               <td>${book.category}</td>
               <td>${book.author}</td>
               <td>${book.createdAt}</td>
@@ -52,7 +55,6 @@ const appendData = (res) => {
 };
 const openUrl = (book) => {
   if (book.id) {
-    console.log(book.id);
     window.open(`${book.id}`, "_blank");
   }
 };
