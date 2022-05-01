@@ -47,7 +47,6 @@ class JwtHandler
     {
         try {
             $decode = JWT::decode($jwt_token, new Key($this->jwt_secrect, 'HS256'));
-            echo $decode->data->user_id;
             return [
                 "data" => $decode->data
             ];
