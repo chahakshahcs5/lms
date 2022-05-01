@@ -1,0 +1,63 @@
+.search {
+  float: right;
+  margin-right: 10px;
+  width: 40%;
+}
+
+.book-table {
+  width: 80%;
+  margin: 50px auto;
+}
+
+.alert-message {
+  display: none;
+}
+
+.sort {
+  float: right;
+}
+
+.bi::before {
+  cursor: pointer !important;
+  color: red !important;
+  font-size: 20px;
+  margin-left: 35%;
+}
+
+.navbar-toggler {
+  margin-bottom: 20px;
+}
+
+.navbar {
+  padding: 20px;
+}
+
+tr:hover {
+  cursor: pointer;
+}
+
+.login-form {
+  width: 50%;
+  margin: 150px auto;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  padding: 50px;
+  border-radius: 5px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signup-form {
+  width: 50%;
+  margin: 50px auto;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  padding: 50px;
+  border-radius: 5px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
