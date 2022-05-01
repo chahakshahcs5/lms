@@ -202,16 +202,11 @@ const init = async () => {
     const data = await axiosWithAuth(token).post(
       "http://localhost/lms/api/verify.php"
     );
-    if (data.data.split) {
-      const user = data.data.split("{");
-      user.shift();
-      const res = JSON.parse("{" + user.join("{"));
-      if (res.success) {
-        localStorage.setItem("user", JSON.stringify(res.user));
-        getAllBooks();
-      }
+    if (data.data.success) {
+      localStorage.setItem("user", JSON.stringify(data.data.user));
+      getAllBooks();
     } else {
-      window.location = "/login";
+      window.location = "/login.html";
     }
   }
 };
